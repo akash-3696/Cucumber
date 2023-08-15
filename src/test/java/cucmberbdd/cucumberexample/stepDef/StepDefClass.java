@@ -28,13 +28,13 @@ public class StepDefClass {
 	    
 	}
 
-	@When("user enters username and password")
-	public void user_enters_username_and_password() {
+	@When("^user enters (.*) and (.*)$")
+	public void user_enters_username_and_password(String uname, String password) {
 	    System.out.println("Step 2: Entering username and pswd");
 //	    driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");
 //	    driver.findElement(By.name("password")).sendKeys("admin123");
-	    driver.findElement(By.name("username")).sendKeys("Admin");
-	    driver.findElement(By.name("password")).sendKeys("admin123");
+	    driver.findElement(By.name("username")).sendKeys(uname);
+	    driver.findElement(By.name("password")).sendKeys(password);
 	}
 
 	@And("click on login button")
